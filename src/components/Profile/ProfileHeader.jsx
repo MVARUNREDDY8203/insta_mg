@@ -11,12 +11,28 @@ import useUserProfileStore from "../../store/userProfileStore";
 import useAuthStore from "../../store/authStore";
 import EditProfile from "./EditProfile";
 import useFollowUser from "../../hooks/useFollowUser";
+import useGetFollowers from "../../hooks/useGetFollowers";
+import FollowersModal from "./FollowersModal";
+import FollowingModal from "./FollowingModal";
 
 const ProfileHeader = () => {
     const { userProfile } = useUserProfileStore();
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const {
+        isOpen: isEditProfileOpen,
+        onOpen: onOpenEditProfile,
+        onClose: onCloseEditProfile,
+    } = useDisclosure();
+    const {
+        isOpen: isFollowerModalOpen,
+        onOpen: onOpenFollowerModal,
+        onClose: onCloseFollowerModal,
+    } = useDisclosure();
+    const {
+        isOpen: isFollowingModalOpen,
+        onOpen: onOpenFollowingModal,
+        onClose: onCloseFollowingModal,
+    } = useDisclosure();
     const authUser = useAuthStore((state) => state.user);
-
     const { isUpdating, isFollowing, handleFollowUser } = useFollowUser(
         userProfile?.uid
     );
@@ -49,7 +65,7 @@ const ProfileHeader = () => {
                             <Button
                                 size={{ base: "sm", md: "md" }}
                                 ml={{ base: "0px", sm: "10px", md: "40px" }}
-                                onClick={onOpen}
+                                onClick={onOpenEditProfile}
                             >
                                 Edit Profile
                             </Button>
@@ -81,13 +97,19 @@ const ProfileHeader = () => {
                             </Text>
                             Posts
                         </Text>
-                        <Text>
+                        <Text
+                            _hover={{ color: "red", cursor: "pointer" }}
+                            onClick={onOpenFollowerModal}
+                        >
                             <Text as={"span"} fontWeight={"bold"} mr={"5px"}>
                                 {userProfile.followers.length}
                             </Text>
                             Followers
                         </Text>
-                        <Text>
+                        <Text
+                            onClick={onOpenFollowingModal}
+                            _hover={{ color: "red", cursor: "pointer" }}
+                        >
                             <Text as={"span"} fontWeight={"bold"} mr={"5px"}>
                                 {userProfile.following.length}
                             </Text>
@@ -97,11 +119,23 @@ const ProfileHeader = () => {
                     <Text>{userProfile.fullname}</Text>
                     <Text>{userProfile.bio}</Text>
                 </VStack>
-                {isOpen && (
+                {isEditProfileOpen && (
                     <EditProfile
-                        isOpen={isOpen}
-                        onClose={onClose}
+                        isOpen={isEditProfileOpen}
+                        onClose={onCloseEditProfile}
                     ></EditProfile>
+                )}
+                {isFollowerModalOpen && (
+                    <FollowersModal
+                        isOpen={isFollowerModalOpen}
+                        onClose={onCloseFollowerModal}
+                    ></FollowersModal>
+                )}
+                {isFollowingModalOpen && (
+                    <FollowingModal
+                        isOpen={isFollowingModalOpen}
+                        onClose={onCloseFollowingModal}
+                    ></FollowingModal>
                 )}
             </Flex>
         </>

@@ -2,9 +2,9 @@ import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
 import SuggestedHeader from "./SuggestedHeader";
 import SuggestedUser from "./SuggestedUser";
 import useSuggestedUsers from "../../hooks/useSuggestedUsers";
+import useGetFollowers from "../../hooks/useGetFollowers";
 const SuggestedUsers = () => {
     const { isLoading, suggestedUsers } = useSuggestedUsers();
-
     if (isLoading) return null;
 
     return (
