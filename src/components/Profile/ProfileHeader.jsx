@@ -47,7 +47,7 @@ const ProfileHeader = () => {
             <Flex w={"full"} mt={5} mb={"40px"}>
                 <Avatar
                     name={userProfile.username}
-                    src={userProfile.profilePicURL}
+                    src={userProfile.profilePicURL || null}
                     size={{ base: "xl", md: "2xl" }}
                     mx={{ base: "20px", md: "70px" }}
                     mt={"20px"}
@@ -98,7 +98,7 @@ const ProfileHeader = () => {
                             Posts
                         </Text>
                         <Text
-                            _hover={{ color: "red", cursor: "pointer" }}
+                            _hover={{ color: "gray", cursor: "pointer" }}
                             onClick={onOpenFollowerModal}
                         >
                             <Text as={"span"} fontWeight={"bold"} mr={"5px"}>
@@ -108,7 +108,7 @@ const ProfileHeader = () => {
                         </Text>
                         <Text
                             onClick={onOpenFollowingModal}
-                            _hover={{ color: "red", cursor: "pointer" }}
+                            _hover={{ color: "gray", cursor: "pointer" }}
                         >
                             <Text as={"span"} fontWeight={"bold"} mr={"5px"}>
                                 {userProfile.following.length}
