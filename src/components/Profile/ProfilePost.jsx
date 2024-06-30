@@ -154,16 +154,16 @@ const ProfilePost = ({ post }) => {
                                 >
                                     <Flex alignItems={"center"} gap={4}>
                                         <Avatar
-                                            src={userProfile.profilePicURL}
+                                            src={userProfile?.profilePicURL}
                                             size={"sm"}
-                                            name={userProfile.username}
+                                            name={userProfile?.username}
                                         />
                                         <Text fontWeight={"bold"} fontSize={12}>
-                                            {userProfile.username}
+                                            {userProfile?.username}
                                         </Text>
                                     </Flex>
 
-                                    {authUser?.uid === userProfile.uid && (
+                                    {authUser?.uid === userProfile?.uid && (
                                         <Button
                                             size={"sm"}
                                             bg={"transparent"}

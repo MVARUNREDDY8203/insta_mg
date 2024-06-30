@@ -77,8 +77,8 @@ const Sidebar = () => {
                         justifyContent={"left"}
                         w={"100%"}
                         mt={"auto"}
-                        id='hi'
-                        // _hover={{ bg: "gray" }} // to get the color of the background on hover
+                        borderRadius={6}
+                        _hover={{ bg: "gray.100" }}
                     >
                         <Tooltip
                             hasArrow
@@ -89,8 +89,6 @@ const Sidebar = () => {
                             display={{ base: "block", md: "none" }}
                         >
                             <Flex
-                                // display={"flex"}
-
                                 alignItems={"center"}
                                 justifyContent={"center"}
                                 gap={4}
@@ -99,7 +97,7 @@ const Sidebar = () => {
                                 w={10}
                                 _hover={{
                                     textDecoration: "none",
-                                    bg: "whiteAlpha.200",
+                                    bg: "gray.100",
                                 }}
                                 style={{
                                     whiteSpace: "nowrap",

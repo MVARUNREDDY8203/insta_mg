@@ -4,6 +4,7 @@ import CreatePost from "./CreatePost";
 import Notifications from "./Notifications";
 import ProfileLink from "./ProfileLink";
 import Search from "./Search";
+import Chats from "./Chats";
 
 const SidebarItems = () => {
     return (
@@ -11,7 +12,7 @@ const SidebarItems = () => {
             <Home></Home>
             <Search></Search>
             <CreatePost></CreatePost>
-            <Notifications></Notifications>
+            <Chats></Chats>
             <ProfileLink></ProfileLink>
         </>
     );

@@ -1,14 +1,12 @@
-import { Avatar, Box, Link, Tooltip } from "@chakra-ui/react";
+import { Box, Link, Tooltip } from "@chakra-ui/react";
+import { AiFillHome, AiOutlineMessage } from "react-icons/ai";
 import { Link as RouterLink } from "react-router-dom";
-import useAuthStore from "../../store/authStore";
 
-const ProfileLink = () => {
-    const authUser = useAuthStore((state) => state.user);
-
+const Chats = () => {
     return (
         <Tooltip
             hasArrow
-            label={"Profile"}
+            label={"Chats"}
             placement='right'
             ml={1}
             openDelay={500}
@@ -16,7 +14,7 @@ const ProfileLink = () => {
         >
             <Link
                 display={"flex"}
-                to={`/${authUser?.username}`}
+                to={"/chats"}
                 as={RouterLink}
                 alignItems={"center"}
                 gap={4}
@@ -26,11 +24,11 @@ const ProfileLink = () => {
                 w={{ base: 10, md: "full" }}
                 justifyContent={{ base: "center", md: "flex-start" }}
             >
-                <Avatar size={"sm"} src={authUser?.profilePicURL || ""} />
-                <Box display={{ base: "none", md: "block" }}>Profile</Box>
+                <AiOutlineMessage size={25}></AiOutlineMessage>
+                <Box display={{ base: "none", md: "block" }}>Chats</Box>
             </Link>
         </Tooltip>
     );
 };
 
-export default ProfileLink;
+export default Chats;

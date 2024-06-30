@@ -30,8 +30,8 @@ const ProfilePosts = () => {
 
             {!isLoading && (
                 <>
-                    {posts.map((post) => (
-                        <ProfilePost post={post} key={post.id} />
+                    {posts.map((post, index) => (
+                        <ProfilePost post={post} key={index} />
                     ))}
                 </>
             )}

@@ -46,7 +46,7 @@ const Search = () => {
                 <Flex
                     alignItems={"center"}
                     gap={4}
-                    _hover={{ bg: "whiteAlpha.400" }}
+                    _hover={{ bg: "gray.100" }}
                     borderRadius={6}
                     p={2}
                     w={{ base: 10, md: "full" }}
