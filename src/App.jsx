@@ -7,6 +7,7 @@ import useAuthStore from "./store/authStore";
 import SetUsername from "./components/AuthForm/SetUsername";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import ChatPage from "./pages/ChatPage/ChatPage";
+import VideoCall from "./pages/VideoCalls/VideoCall";
 function App() {
     const authUser = useAuthStore((state) => state.user);
     const profileComplete = useAuthStore((state) => state.profileComplete);
@@ -70,6 +71,20 @@ function App() {
                         authUser ? (
                             profileComplete ? (
                                 <ChatPage />
+                            ) : (
+                                <Navigate to={"/set-username"} />
+                            )
+                        ) : (
+                            <Navigate to={"/auth"} />
+                        )
+                    }
+                />
+                <Route
+                    path='/videocall'
+                    element={
+                        authUser ? (
+                            profileComplete ? (
+                                <VideoCall />
                             ) : (
                                 <Navigate to={"/set-username"} />
                             )
