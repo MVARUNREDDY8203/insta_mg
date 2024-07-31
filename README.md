@@ -1,14 +1,22 @@
 ##### This is my attempt at creating an Instagram - clone
 ## Insta-mg
 
-
-
 Web App Overview:
 
-AuthPage: Sign Up / Login / Google Authentication
+- using ReactJS for the frontend
+- using Firebase for the DataBase (Firestore - noSQL) and Storage
+- using Zustand store for state management
+- using ChakraUI for components
+
+Users on the app can:
+1. [SignUp/Login using email-password or Google Authentication](#authpage-sign-up--login--google-authentication)
+2. [Get FeedPosts of users followed/ Get User Suggestions](#homepage-sidebar--feedposts--suggested-users)
+3. 
+
+### AuthPage: Sign Up / Login / Google Authentication
 ![image](https://github.com/MVARUNREDDY8203/insta_mg/assets/94187286/a9bbd11e-a082-42c5-89dd-275fa24faf46)
 
-HomePage: Sidebar / FeedPosts / Suggested Users
+### HomePage: Sidebar / FeedPosts / Suggested Users
 ![image](https://github.com/MVARUNREDDY8203/insta_mg/assets/94187286/cf2339fc-4a5c-429c-8946-ce1f3d5fa48e)
 Follow / Unfollow Users
 
@@ -27,6 +35,9 @@ Edit Profile:
 
 Search Users:
 ![image](https://github.com/MVARUNREDDY8203/insta_mg/assets/94187286/672267b9-f248-4fac-801b-607df0973f11)
+
+Chats:
+![image](https://github.com/user-attachments/assets/b9c73ac5-f496-432e-a049-3bea849f1ff8)
 
 Create Posts:
 ![image](https://github.com/MVARUNREDDY8203/insta_mg/assets/94187286/7a165f01-d23f-4088-8685-8b3c821a4973)
